@@ -1,6 +1,6 @@
 Name:           device-oneplus-enchilada
 Version:        0.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        --
 
 License:        --
@@ -13,6 +13,21 @@ Requires:       op6-fedora-pmos
 
 %description
 --
+
+
+%build
+cat > INFO <<EOF
+--
+EOF
+
+
+%install
+mkdir -p %{buildroot}/usr/share/%{name}
+install -m 0644 INFO %{buildroot}/usr/share/%{name}/INFO
+
+
+%files
+/usr/share/%{name}/INFO
 
 
 %changelog
